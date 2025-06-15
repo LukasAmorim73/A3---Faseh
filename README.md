@@ -1,6 +1,6 @@
 # Sistema de Agendamento - Projeto A3
 
-Este projeto foi desenvolvido como parte da A3 da disciplina de Programação de Soluções Computacionais, com o objetivo de informatizar os processos de agendamento de serviços em pequenas ou médias empresas da região.
+Este projeto foi desenvolvido como parte da A3 da disciplina de Programação de Soluções Computacionais, com o objetivo de informatizar os processos de agendamento de serviços no FuroLider.
 
 ## 💡 Funcionalidades do Sistema
 
