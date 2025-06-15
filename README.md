@@ -11,7 +11,7 @@ Este projeto foi desenvolvido como parte da A3 da disciplina de **Programação 
 - Geração de **Histórico de Atendimentos**
 - Envio de **Notificações** (simulação)
 - Registro de **Transações Externas** (WhatsApp, Web, Outros)
-
+=
 ---
 
 ## Tecnologias Utilizadas
