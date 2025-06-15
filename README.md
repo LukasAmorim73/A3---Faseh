@@ -36,10 +36,6 @@ src/main/java/com/seuusuario/agendamento/
 
 ├── entity # Entidades do Banco de Dados (JPA Entities)
 
-├── dto # Data Transfer Objects (se necessário)
-
-├── util # Classes Utilitárias (se houver)
-
 └── AgendamentoApplication.java # Classe principal Spring Boot
 
 ---
