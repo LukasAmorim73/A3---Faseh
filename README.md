@@ -20,4 +20,35 @@ Este projeto foi desenvolvido como parte da A3 da disciplina de Programação de
 - Lombok
 
 ## 🎯 Estrutura do Projeto
+src/
+├── controller/
+├── service/
+├── repository/
+├── entity/
+├── dto/
+├── config/
+└── Application.java
+
+
+## 🗃️ Banco de Dados
+
+O banco de dados foi modelado com as seguintes entidades:
+
+- Cliente
+- Profissional
+- Serviço
+- Agendamento
+- Histórico
+- Notificação
+- Transação Externa
+
+### Script SQL
+
+Disponível na pasta `/resources/sql/` como `schema.sql`.
+
+## 🧪 Como Executar
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/SEU_USUARIO/sistema-agendamento-a3.git
 
