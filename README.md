@@ -27,12 +27,19 @@ Este projeto foi desenvolvido como parte da A3 da disciplina de **Programação 
 O projeto está organizado da seguinte forma:
 
 src/main/java/com/seuusuario/agendamento/
+
 ├── controller # Camada de Controllers (REST API)
+
 ├── service # Camada de Serviços (Regras de Negócio)
+
 ├── repository # Camada de Repositórios (JPA / MySQL)
+
 ├── entity # Entidades do Banco de Dados (JPA Entities)
+
 ├── dto # Data Transfer Objects (se necessário)
+
 ├── util # Classes Utilitárias (se houver)
+
 └── AgendamentoApplication.java # Classe principal Spring Boot
 
 ---
