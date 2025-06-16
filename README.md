@@ -81,5 +81,5 @@ o Script está em /sql/agendamento.sql
 
 ## Gestão de Projeto
 
-Está localizada no Link do Trello: (Botem o link)
+Está localizada no Link do Trello: https://trello.com/b/TvtB9S1N/meu-quadro-do-trello
 
