@@ -53,11 +53,13 @@ src/main/java/com/seuusuario/agendamento/
 1. **Clone o repositório:**
 
 git clone https://github.com/seuusuario/sistema-agendamento.git
+
 cd sistema-agendamento
 
 2. **Configure o banco de dados:**
 
-Crie um banco no MySQL (exemplo: agendamento_db)
+Crie um banco no MySQL (exemplo: Agendamento.sql)
+
 Execute o arquivo SQL que está na pasta /sql do projeto.
 
 3. **Configure o application.properties:**
@@ -73,6 +75,7 @@ spring.jpa.show-sql=true
 4. **Compile e Rode o projeto:**
 
 mvn clean install
+
 mvn spring-boot:run
 
 ## SCRIPT
@@ -82,4 +85,3 @@ o Script está em /sql/agendamento.sql
 ## Gestão de Projeto
 
 Está localizada no Link do Trello: https://trello.com/b/TvtB9S1N/meu-quadro-do-trello
-
