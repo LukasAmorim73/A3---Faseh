@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ProfissionalDAO {
+public class ProfissionalRepository {
     public void cadastrarProfissional(Profissional profissional) {
         String sql = "INSERT INTO profissional (nome, especialidade) VALUES (?, ?)";
 
