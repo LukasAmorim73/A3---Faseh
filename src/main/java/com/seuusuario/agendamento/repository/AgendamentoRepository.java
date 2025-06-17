@@ -1,4 +1,4 @@
-package com.seuusuario.agendamento.dao;
+package com.seuusuario.agendamento.Repository;
 
 import com.seuusuario.agendamento.ConexaoComBancoDeDados;
 import com.seuusuario.agendamento.entity.Agendamento;

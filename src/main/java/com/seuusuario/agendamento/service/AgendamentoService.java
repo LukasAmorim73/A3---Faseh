@@ -1,34 +1,37 @@
 package com.seuusuario.agendamento.service;
 
-import com.seuusuario.agendamento.entity.Agendamento;
-import com.seuusuario.agendamento.repository.AgendamentoRepository;
-import org.springframework.stereotype.Service;
+import com.seuusuario.agendamento.Repository.AgendamentoRepository;
+import com.seuusuario.agendamento.Repository.HistoricoRepository;
+import com.seuusuario.agendamento.Repository.NotificacaoRepository;
+import com.seuusuario.agendamento.Repository.TransacaoExternaRepository;
+import com.seuusuario.agendamento.entity.*;
 
-import java.util.List;
-import java.util.Optional;
-
-@Service
 public class AgendamentoService {
+    private AgendamentoRepository agendamentoRepository = new AgendamentoRepository();
+    private HistoricoRepository historicoRepository = new HistoricoRepository();
+    private NotificacaoRepository notificacaoRepository = new NotificacaoRepository();
+    private TransacaoExternaRepository transacaoRepository = new TransacaoExternaRepository();
 
-    private final AgendamentoRepository repository;
+    public void fazerAgendamento(Agendamento agendamento, Cliente cliente, Servico servico) {
+        agendamentoRepository.cadastrarAgendamento(agendamento);
 
-    public AgendamentoService(AgendamentoRepository repository) {
-        this.repository = repository;
-    }
+        Historico historico = new Historico();
+        historico.setClienteId(cliente.getId());
+        historico.setDescricao("Serviço realizado: " + servico.getNome());
+        historicoRepository.cadastrarHistorico(historico);
 
-    public List<Agendamento> listarTodos() {
-        return repository.findAll();
-    }
+        Notificacao notificacao = new Notificacao();
+        notificacao.setClienteId(cliente.getId());
+        notificacao.setMensagem("Agendamento concluído com sucesso para: " + servico.getNome());
+        notificacaoRepository.cadastrarNotificacao(notificacao);
 
-    public Agendamento salvar(Agendamento obj) {
-        return repository.save(obj);
-    }
+        // Criar transação
+        TransacaoExterna transacao = new TransacaoExterna();
+        transacao.setClienteId(cliente.getId());
+        transacao.setValor(servico.getPreco());
+        transacao.setTipo("Pagamento de Serviço");
+        transacaoRepository.cadastrarTransacao(transacao);
 
-    public Optional<Agendamento> buscarPorId(Long id) {
-        return repository.findById(id);
-    }
-
-    public void deletar(Long id) {
-        repository.deleteById(id);
+        System.out.println("Agendamento concluído com sucesso!");
     }
 }

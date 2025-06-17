@@ -1,34 +1,22 @@
 package com.seuusuario.agendamento.service;
 
+import com.seuusuario.agendamento.Repository.ProfissionalRepository;
 import com.seuusuario.agendamento.entity.Profissional;
-import com.seuusuario.agendamento.repository.ProfissionalRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
 public class ProfissionalService {
+    private ProfissionalRepository profissionalRepository = new ProfissionalRepository();
 
-    private final ProfissionalRepository repository;
-
-    public ProfissionalService(ProfissionalRepository repository) {
-        this.repository = repository;
-    }
-
-    public List<Profissional> listarTodos() {
-        return repository.findAll();
-    }
-
-    public Profissional salvar(Profissional obj) {
-        return repository.save(obj);
-    }
-
-    public Optional<Profissional> buscarPorId(Long id) {
-        return repository.findById(id);
-    }
-
-    public void deletar(Long id) {
-        repository.deleteById(id);
+    public void adicionarProfissional(Profissional profissional, List<Profissional> profissionaisExistentes) {
+        for (Profissional p : profissionaisExistentes) {
+            if (p.getNome().equalsIgnoreCase(profissional.getNome())
+                    && p.getEspecialidade().equalsIgnoreCase(profissional.getEspecialidade())) {
+                System.out.println("Profissional já cadastrado.");
+                return;
+            }
+        }
+        profissionalRepository.cadastrarProfissional(profissional);
+        System.out.println("Profissional cadastrado com sucesso!");
     }
 }
