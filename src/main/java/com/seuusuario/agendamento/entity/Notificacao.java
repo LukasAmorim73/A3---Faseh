@@ -1,21 +1,24 @@
 package com.seuusuario.agendamento.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Notificacao {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idNotificacao;
-    private String tipo;
-    private String destinatario;
-    private LocalDateTime dataEnvio;
-    private String statusEnvio;
-    private Long idAgendamento;
+    private int id;
+    private int clienteId;
+    private String mensagem;
+
+    public Notificacao() {}
+
+    public Notificacao(int id, int clienteId, String mensagem) {
+        this.id = id;
+        this.clienteId = clienteId;
+        this.mensagem = mensagem;
+    }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public int getClienteId() { return clienteId; }
+    public void setClienteId(int clienteId) { this.clienteId = clienteId; }
+
+    public String getMensagem() { return mensagem; }
+    public void setMensagem(String mensagem) { this.mensagem = mensagem; }
 }
