@@ -1,21 +1,24 @@
 package com.seuusuario.agendamento.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Historico {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idHistorico;
-    private LocalDateTime dataRegistro;
-    @Column(columnDefinition = "TEXT")
-    private String relatorioTexto;
-    private Long idAgendamento;
-    private Long idCliente;
+    private int id;
+    private int clienteId;
+    private String descricao;
+
+    public Historico() {}
+
+    public Historico(int id, int clienteId, String descricao) {
+        this.id = id;
+        this.clienteId = clienteId;
+        this.descricao = descricao;
+    }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public int getClienteId() { return clienteId; }
+    public void setClienteId(int clienteId) { this.clienteId = clienteId; }
+
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 }
